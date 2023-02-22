@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K.tab</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Lato:wght@100&family=Oswald:wght@200;400&family=Staatliches&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <header>
+      <a href="/homepage"><img src="img/images/logo.png" class="logo" /></a>
+      <ul style="position: relative">
+        <li><a href="/homepage">Home</a></li>
+        <li><a href="/products">Product Page</a></li>
+        <li><a href="/cart">Cart</a></li>
+        <li><a href="/logout">Sign Out</a></li>
+      </ul>
+    </header>
+
+    <h2 class="section-header">CART</h2>
+
+    <div class="cart-container">
+      <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+      </div>
+      <%prods.forEach(function(prod){%>
+      <div class="cart-items">
+        <h3 style="color: #32383e"><%=prod.name%>: <%=prod.quantity %></h3>
+        <div class="price" style="text-align: center">
+          <%=prod.cost * prod.quantity %> ₸
+        </div>
+      </div>
+      <%})%>
+      <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+
+        <span class="cart-total-price"><%=total %> </span>
+      </div>
+    </div>
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_cart" />
+      <input type="hidden" name="upload" value="1" />
+      <input
+        type="hidden"
+        name="business"
+        value="sb-je43ht16871511@business.example.com"
+      />
+      <input type="hidden" name="item_name_1" value="Aggregated items" />
+      <input type="hidden" name="amount_1" value="0.00" />
+      <div id="smart-button-container">
+        <div style="text-align: center;">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+    </form>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      function initPayPalButton() {
+        paypal.Buttons({
+          style: {
+            shape: 'pill',
+            color: 'blue',
+            layout: 'vertical',
+            label: 'paypal',
+
+          },
+
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+            });
+          },
+
+          onApprove: function(data, actions) {
+            return actions.order.capture().then(function(orderData) {
+
+              // Full available details
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+              // Show a success message within this page, e.g.
+              const element = document.getElementById('paypal-button-container');
+              element.innerHTML = '';
+              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+              // Or go to another URL:  actions.redirect('thank_you.html');
+
+            });
+          },
+
+          onError: function(err) {
+            console.log(err);
+          }
+        }).render('#paypal-button-container');
+      }
+      initPayPalButton();
+    </script>
+
+    <footer>
+      <div class="footer">
+        <h3>K.tab</h3>
+        <p>bari jaqsy bolady :)</p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.facebook.com/qazaq.republic.brand/"
+              class="fa fa-facebook"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://api.whatsapp.com/send/?phone=77782894401&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%21+%D0%A3%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%EF%BF%BD%0A%D0%A0%D0%BE%D1%81%D1%82%2F%D0%B2%D0%B5%D1%81%3A%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A&app_absent=0"
+              class="fa fa-whatsapp"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/qazaq.republic/?hl=en"
+              class="fa fa-instagram"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

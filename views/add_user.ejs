@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K.tab</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/homeAdmin"><img src="img/images/logo.png" class="logo" /></a>
+      <ul>
+        <li><a href="/homeAdmin">Home</a></li>
+
+        <li><a href="/admin">Admin Area</a></li>
+        <li><a href="/logout">Sign Out</a></li>
+      </ul>
+    </header>
+    <main id="site-main">
+      <div class="container">
+        <div class="box-nav d-flex justify-between">
+          <div class="filter">
+            <a href="/users"
+              ><i class="fas fa-angle-double-left"></i> All Users</a
+            >
+          </div>
+        </div>
+        <div class="form-title text-center">
+          <h2 class="text-dark">New User</h2>
+          <span class="text-light"
+            >Use the below form to create a new user</span
+          >
+        </div>
+        <form action="add_user" method="POST" id="add_user">
+          <div class="new_user">
+            <div class="form-group">
+              <label for="username" class="text-light">Username</label>
+              <input type="hidden" name="id" value="" />
+              <input
+                type="text"
+                name="username"
+                value=""
+                placeholder="Username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="text-light">Email</label>
+              <input
+                type="email"
+                name="email"
+                value=""
+                placeholder="example@gmail.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password" class="text-light">Password</label>
+              <input
+                type="password"
+                name="password"
+                value=""
+                placeholder="Password"
+              />
+            </div>
+            <div class="form-group">
+              <label for="role" class="text-light">Role</label>
+              <input type="text" name="role" value="" placeholder="USER" />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn text-dark update">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <h3>Qazaq Republic</h3>
+        <p>bari jaqsy bolady :)</p>
+        <ul class="socials">
+          <li>
+            <a
+              href="https://www.facebook.com/qazaq.republic.brand/"
+              class="fa fa-facebook"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://api.whatsapp.com/send/?phone=77782894401&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%21+%D0%A3%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%EF%BF%BD%0A%D0%A0%D0%BE%D1%81%D1%82%2F%D0%B2%D0%B5%D1%81%3A%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A&app_absent=0"
+              class="fa fa-whatsapp"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/qazaq.republic/?hl=en"
+              class="fa fa-instagram"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

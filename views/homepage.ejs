@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K.tab</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Lato:wght@100&family=Oswald:wght@200;400&family=Staatliches&display=swap" rel="stylesheet">
+
+    <!-- Start of Async Drift Code -->
+    <script>
+      "use strict"
+
+      !(function () {
+        var t = (window.driftt = window.drift = window.driftt || [])
+        if (!t.init) {
+          if (t.invoked)
+            return void (
+              window.console &&
+              console.error &&
+              console.error("Drift snippet included twice.")
+            )
+          ;(t.invoked = !0),
+            (t.methods = [
+              "identify",
+              "config",
+              "track",
+              "reset",
+              "debug",
+              "show",
+              "ping",
+              "page",
+              "hide",
+              "off",
+              "on",
+            ]),
+            (t.factory = function (e) {
+              return function () {
+                var n = Array.prototype.slice.call(arguments)
+                return n.unshift(e), t.push(n), t
+              }
+            }),
+            t.methods.forEach(function (e) {
+              t[e] = t.factory(e)
+            }),
+            (t.load = function (t) {
+              var e = 3e5,
+                n = Math.ceil(new Date() / e) * e,
+                o = document.createElement("script")
+              ;(o.type = "text/javascript"),
+                (o.async = !0),
+                (o.crossorigin = "anonymous"),
+                (o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js")
+              var i = document.getElementsByTagName("script")[0]
+              i.parentNode.insertBefore(o, i)
+            })
+        }
+      })()
+      drift.SNIPPET_VERSION = "0.3.1"
+      drift.load("22tbtifg6yuz")
+    </script>
+    <!-- End of Async Drift Code -->
+  </head>
+  <body>
+    <section>
+      <div class="circle"></div>
+      <header>
+        <a href="/homepage"><img src="img/images/logo.png" class="logo" /></a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/products">Product Page</a></li>
+          <li><a href="/cart">Cart</a></li>
+          <li><a href="/logout">Sign Out</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>
+            Welcome to the <br />
+            world of <span>Kazakh Literature!</span>
+          </h2>
+          <p>
+            The idea of our shop is to enhance the role
+            and magitude of kazakh language in modern
+            kazakh society.
+          </p>
+          <a href="/prodPage">See the books catalog</a>
+        </div>
+        <div class="imgBox">
+          <img src="img/images/pair.png" class="qqwear" />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+                  src="img/images/pair.png"
+                  onclick="imgSlider('img/images/img1.png'); changeCircleColor1"
+          />
+        </li>
+        <li>
+          <img
+                  src="img/images/pair2.png"
+                  onclick="imgSlider('img/images/pair2.png'); changeCircleColor2"
+          />
+        </li>
+        <li>
+          <img
+                  src="img/images/pair3.png"
+                  onclick="imgSlider('img/images/img3.png'); changeCircleColor3"
+          />
+        </li>
+      </ul>
+      <ul class="sci">
+        <li>
+          <a href="https://www.facebook.com/qazaq.republic.brand/"
+          ><img src="img/images/facebook.png"
+            /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/qazaq.republic/?hl=en"
+          ><img src="img/images/instagram.png"
+            /></a>
+        </li>
+        <li>
+          <a href="https://twitter.com/hashtag/qazaqrepublic"
+          ><img src="img/images/tw.png"
+            /></a>
+        </li>
+      </ul>
+    </section>
+
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".qqwear").src = anything
+      }
+      function changeCircleColor1() {
+        const circle = document.querySelector(".circle")
+        circle.style.backgroundImage = url("back.png")
+      }
+      function changeCircleColor2() {
+        const circle = document.querySelector(".circle")
+        circle.style.backgroundImage = url("back2.png")
+      }
+      function changeCircleColor3() {
+        const circle = document.querySelector(".circle")
+        circle.style.backgroundImage = url("back3.png")
+      }
+    </script>
+    <div class="popular">
+      <h1>Bestsellers</h1>
+      <div class="responsive">
+        <div class="gallery">
+          <a href="img/images/gal1.jpeg" target="_blank"
+          ><img src="img/images/gal1.png" width="300" height="200"
+            /></a>
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+          <a href="img/images/gal2.jpeg" target="_blank"
+          ><img src="img/images/gal2.png" width="300" height="200"
+            /></a>
+        </div>
+      </div>
+      <div class="responsive">
+        <div class="gallery">
+          <a href="img/images/gal3.jpeg" target="_blank">
+            <img src="img/images/gal3.png" width="300" height="200" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="imgrid">
+    </div>
+    <!--<h1>Google Maps</h1>-->
+
+    <!--<div id="map"></div>-->
+    <!--<script src="js/app.js"></script>-->
+
+    <footer>
+      <div class="footer">
+        <h3>K.tab</h3>
+        <p>Contact us          +77769173262</p>
+        <ul class="socials">
+          <li>
+            <a
+                    href="https://www.facebook.com/milana.aligazieva/"
+                    class="fa fa-facebook"
+            ></a>
+          </li>
+          <li>
+            <a
+                    href="https://api.whatsapp.com/send/?phone=77782894401&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%21+%D0%A3%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%EF%BF%BD%0A%D0%A0%D0%BE%D1%81%D1%82%2F%D0%B2%D0%B5%D1%81%3A%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A&app_absent=0"
+                    class="fa fa-whatsapp"
+            ></a>
+          </li>
+          <li>
+            <a
+                    href="https://www.instagram.com/mjkkj__/"
+                    class="fa fa-instagram"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxy7_PtbdcnB5IUiS20Wdbzhgshzfjdew&callback=initMap"
+            async
+            defer
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K.tab</title>
+    <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&family=Lato:wght@100&family=Oswald:wght@200;400&family=Staatliches&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <a href="/"><img src="img/images/logo.png" class="logo" /></a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/prodPage">Product Page</a></li>
+        <li><a href="/register">Registration</a></li>
+    </ul>
+</header>
+
+<h1
+        style="
+        text-align: center;
+        font-weight: bold;
+        margin-top: 150px;
+        font-family: 'EB Garamond', serif;
+      "
+>
+    Books Catalogue
+</h1>
+<div class="row">
+    <%prods.forEach(function (prod){%>
+    <div class="col-sm-6 col-md-4">
+        <a class="pa" href="/prodPage">
+            <div class="thumbnail">
+                <img src="<%=prod.image%>" class="img-responsive" />
+                <div class="caption">
+                    <h3 style="color: #3a2d27"><%=prod.name%></h3>
+                    <p class="description"><%=prod.description%></p>
+                    <div class="clearfix">
+                        <div class="price pull-left"><%=prod.cost%>₸</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <%})%>
+</div>
+<footer>
+    <div class="footer">
+        <h3>K.tab</h3>
+        <p>bari jaqsy bolady :)</p>
+        <ul class="socials">
+            <li>
+                <a
+                        href="https://www.facebook.com/qazaq.republic.brand/"
+                        class="fa fa-facebook"
+                ></a>
+            </li>
+            <li>
+                <a
+                        href="https://api.whatsapp.com/send/?phone=77782894401&text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%21+%D0%A3%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%EF%BF%BD%0A%D0%A0%D0%BE%D1%81%D1%82%2F%D0%B2%D0%B5%D1%81%3A%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D1%8F%3A%0A%D0%93%D0%BE%D1%80%D0%BE%D0%B4%3A&app_absent=0"
+                        class="fa fa-whatsapp"
+                ></a>
+            </li>
+            <li>
+                <a
+                        href="https://www.instagram.com/qazaq.republic/?hl=en"
+                        class="fa fa-instagram"
+                ></a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
